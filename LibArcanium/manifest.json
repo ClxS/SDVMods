@@ -1,0 +1,13 @@
+﻿{
+  "Name": "libArcanium",
+  "Author": "ClxS",
+  "Version": "0.0.1",
+  "Description": "",
+  "UniqueID": "ClxS.libArcanium",
+  "EntryDll": "LibArcanium.dll",
+  "MinimumApiVersion": "2.10.0",
+  "UpdateKeys": [],
+  "Dependencies": [
+    { "UniqueID": "ClxS.libClxSDI" }
+  ]
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Name": "libAffectiveFluids",
+  "Author": "ClxS",
+  "Version": "0.0.1",
+  "Description": "A general purpose library for adding \"Affective Liquids\". On it's own this library doesn't do much.",
+  "UniqueID": "ClxS.libAffectiveFluids",
+  "EntryDll": "LibAffectiveFluids.dll",
+  "MinimumApiVersion": "2.10.0",
+  "UpdateKeys": []
+}

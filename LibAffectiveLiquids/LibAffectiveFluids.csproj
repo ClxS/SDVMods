@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9EADF1BA-B310-4DDB-882B-C163759E3369}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibAffectiveFluids</RootNamespace>
+    <AssemblyName>LibAffectiveFluids</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Constants.cs" />
+    <Compile Include="ECS\ISystem.cs" />
+    <Compile Include="ECS\SystemManager.cs" />
+    <Compile Include="Systems\Affect\EffectApiExtensions.cs" />
+    <Compile Include="Systems\Affect\IEffectSystem.cs" />
+    <Compile Include="Systems\Affect\EffectApi.cs" />
+    <Compile Include="API\FluidApi.cs" />
+    <Compile Include="API\IEffectApi.cs" />
+    <Compile Include="API\IFluidApi.cs" />
+    <Compile Include="Behaviours\FluidInteractor\Engulf.cs" />
+    <Compile Include="Behaviours\FluidInteractor\EngulfAndSpawn.cs" />
+    <Compile Include="Behaviours\FluidInteractor\IFluidInteractor.cs" />
+    <Compile Include="Behaviours\FluidInteractor\MutualSpawn.cs" />
+    <Compile Include="Behaviours\FluidInteractor\ReplaceAndSpawnInteractor.cs" />
+    <Compile Include="Behaviours\FluidInteractor\ReplaceInteractor.cs" />
+    <Compile Include="Behaviours\Spread\ISpreadBehaviour.cs" />
+    <Compile Include="Behaviours\Spread\RadialSpread.cs" />
+    <Compile Include="ECS\EcsManager.cs" />
+    <Compile Include="EventListener.cs" />
+    <Compile Include="Fluids\Affects.cs" />
+    <Compile Include="Fluids\Gases\ToxicGas.cs" />
+    <Compile Include="Fluids\IFluid.cs" />
+    <Compile Include="Fluids\IImpartedEffect.cs" />
+    <Compile Include="Systems\Affect\Inbuilt\Burning.cs" />
+    <Compile Include="Fluids\Liquids\Lava.cs" />
+    <Compile Include="Fluids\Liquids\ToxicSlime.cs" />
+    <Compile Include="ModEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\ColouredCloudRenderer.cs" />
+    <Compile Include="Renderers\IRenderer.cs" />
+    <Compile Include="Systems\Affect\AffectSystem.cs" />
+    <Compile Include="Systems\Affect\AffectRenderSystem.cs" />
+    <Compile Include="Utility\TargetHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="manifest.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Pathoschild.Stardew.ModBuildConfig.2.2.0\analyzers\dotnet\cs\StardewModdingAPI.ModBuildConfig.Analyzer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fluids\ImpartedEffects\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Pathoschild.Stardew.ModBuildConfig.2.2.0\build\Pathoschild.Stardew.ModBuildConfig.targets" Condition="Exists('..\packages\Pathoschild.Stardew.ModBuildConfig.2.2.0\build\Pathoschild.Stardew.ModBuildConfig.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Pathoschild.Stardew.ModBuildConfig.2.2.0\build\Pathoschild.Stardew.ModBuildConfig.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Pathoschild.Stardew.ModBuildConfig.2.2.0\build\Pathoschild.Stardew.ModBuildConfig.targets'))" />
+  </Target>
+</Project>

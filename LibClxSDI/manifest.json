@@ -1,0 +1,10 @@
+﻿{
+  "Name": "libClxSDI",
+  "Author": "ClxS",
+  "Version": "0.0.1",
+  "Description": "Used to facilitate dependency injection across ClxS mods. All ClxS mods require this.",
+  "UniqueID": "ClxS.libClxSDI",
+  "EntryDll": "LibClxSDI.dll",
+  "MinimumApiVersion": "2.10.0",
+  "UpdateKeys": []
+}

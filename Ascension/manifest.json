@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Ascension",
+  "Author": "ClxS",
+  "Version": "0.0.1",
+  "Description": "Leave the Climbers Court and begin your ascension.",
+  "UniqueID": "ClxS.Ascension",
+  "EntryDll": "Ascension.dll",
+  "MinimumApiVersion": "2.10.0",
+  "UpdateKeys": [],
+  "Dependencies": [
+    { "UniqueID": "ClxS.libArcanium" },
+    { "UniqueID": "ClxS.libAffectiveFluids" },
+    { "UniqueID": "ClxS.libClxSDI" }
+  ]
+}
